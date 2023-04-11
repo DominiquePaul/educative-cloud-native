@@ -14,3 +14,5 @@
 <FeatureToggle name={FEATURE_TOGGLES.vipWelcome.name}>
 	<p>Some people see this, others don't!</p>
 </FeatureToggle>
+
+<p>test</p>
