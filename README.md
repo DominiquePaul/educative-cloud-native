@@ -6,6 +6,16 @@ Lerna: tool to manage and optimise the workflow of mlti-package JS respositories
 
 We configure dependencies, test configurations and linting configurations in the parent directory. We have a `services` folder that contains all individual apps.
 
+# firebase `package.json`
+
+We add this to package.json:
+`"deploy:firebase": "npm run deploy --prefix firebase"`
+We add --prefix firebase. This will run the deploy script in the firebase directory before running in the web directory.
+
+`"deploy": "run-s deploy:clean export deploy:firebase"` // 'run-s' is equivalent to 'npm-run-all' and executes commands in a given sequential order. It firstly removes extra directories, then runs the export script, and then deploy's the application to firebase.
+
+Install run-s first with `npm install npm-run-all --save-dev` to run the command.
+
 # Monorepo Template
 
 A minimal monorepo template with:
