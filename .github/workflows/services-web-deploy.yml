@@ -4,11 +4,11 @@ on:
     branches:
     - master
     - add-deployment-github-action
-jobs:
-  deploy: 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2 # it checks-out your repository so that this workflow could access its
+jobs: # start of 'jobs' configuration
+  deploy: # start of 'deploy' job configuration
+    runs-on: ubuntu-latest # definition of the OS on which these commands will execute.
+    steps: # definition of steps to follow in this job
+      - uses: actions/checkout@v2 # it checks-out your repository so that this workflow could access it
       - name: Install dependencies
         run: npm install
       - name: Bootstrap all services
@@ -16,4 +16,4 @@ jobs:
       - name: Deploy the web service
         run: npm run deploy --prefix services/web
         env: # definition of environment variables that this workflow needs to run
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }} 
