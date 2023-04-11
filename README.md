@@ -16,6 +16,14 @@ We add --prefix firebase. This will run the deploy script in the firebase direct
 
 Install run-s first with `npm install npm-run-all --save-dev` to run the command.
 
+### Development
+```
+"dev": "run-p dev:*",
+"dev:firebase": "npm run dev --prefix firebase",
+"dev:sapper": "sapper dev"
+```
+Note: run-p is provided by the npm-run-all dev dependency. It runs all dev:* scripts in parallel. In our case, that’s dev:firebase and dev:sapper.
+
 # Monorepo Template
 
 A minimal monorepo template with:
